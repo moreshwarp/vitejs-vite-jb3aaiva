@@ -177,7 +177,7 @@ function a() {
 }
 
 var o = a();
-o()
+o(); // here the variable x and z are not in use any more they are collected by garbage collector
 
 // now in csole if you try to access the var z in console via browser the value wont be there 
 
