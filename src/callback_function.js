@@ -19,7 +19,6 @@ console.table("Will deep dive into folowing Questions");
 // 7. Garbage Collections & removeEventListener?
 
 
-
 // Fucntions are 1st class Citizens in Javascript
 console.log("What is callback function in JS?");
 
@@ -32,6 +31,21 @@ console.log("What is callback function in JS?");
 
 // Let's deepdive using setTimeout function 
 
-setTimeout(function () {
-console.log("Timer");
-}, 500);
+setTimeout(function() {console.log("Timer");}, 5000);
+
+// setTimeOut function will be called and here the callback function is been passed as an argument to the setTimeOut also along with it after 5000ms the function will be called and print the value or whatever code is about to execute mean while this function be store in an seprate memory loaction and a timer of 5000ms will be attached to it and as JS is single threaded language 
+
+// Here it callback function offers the power of asynchronous being an synchronous, single threaded laguage, also by doing this as JS exextion dont wait for 5000ms and it quickly moves to the next line.
+
+function x(y) {
+  console.log("x"); // will print x
+  y(); // calling the argument i.e. another callback function and print y.
+}  // Now, while the flow of execution here, it would store the copy of this functionin the memory.
+
+x(function y() {
+  console.log("Y"); 
+});
+
+// here the function is been called and argument to is been passed i.e. also a function i.e callback fucntion it will print the value for fucntion 
+
+// Hence, 1st x will be printed and then the value y will be printed and thne once the 5000ms are done the value Timer will be printed or logged on the console
