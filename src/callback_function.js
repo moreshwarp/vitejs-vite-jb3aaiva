@@ -57,19 +57,19 @@ x(function y() {
 
 // if you see in the call stack the x and y are there in the call stack i.e. these functions are there in the callstack and once after the 5000ms are done the setTimeOut Function will be pop up in the call stack 
 
-// So now every execution that takes place in JS is using the Call Stack so when there any opertion that blocks the call stack then this is  know as blocking the main thread
+// So now every execution that takes place in JS is using the Call Stack, so when there any opertion that blocks the call stack then this is  know as blocking the main thread
 
 // Suppose your fucntion either x() or y()  have humangous line of code to execute so it would take muach time to execute the code and till that time other fucntions and code has to wait. 
 
 // And hence everything will be blocked.
 
-// Till that time no other code or all the other code apart form x() and y() will have to wait for the execution as JS has only one CALL STACK and one MAIN THREAD it JS engine won't be able to execute the other code.
+// Till that time no other code or all the other code apart form x() and y() will have to wait for the execution as JS has only one CALL STACK and one MAIN THREAD, it JS engine won't be able to execute the other code.
 
-//  As hence we say we should never block our main thread i.e. CALL STACK 
+// hence, we say and follow the rule i.e. we should never block our main thread i.e. CALL STACK 
 
-// Hence, we should alway take use of async operation given in the JavaScript, one of the example of SetTimeOut in order to prevent it from halting i.e. Bloacking the main thread i.e. CAll STACK i.e also know as main thread.
+// Hence, we should alway take use of async operation given in the JavaScript, one of the example of SetTimeOut in order to prevent it from halting i.e. Blocking the main thread i.e. CAll STACK i.e also know as main thread.
 
-// If JS did not had the callback functions, and 1st class functions, we could not have pass this functions to an another functions We wont be able to asynchronous oprations
+// If JS did not had the callback functions, and 1st class functions, we could not have pass this functions to an another functions We wont be able to perform asynchronous oprations
 
-//  So Using the web API i.e. setTimeOut we are able to do the asynchronous operations.
+// So Using the web API i.e. setTimeOut and callback functions, we are able to do the asynchronous operations in JS
 
