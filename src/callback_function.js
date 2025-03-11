@@ -37,7 +37,7 @@ setTimeout(function () {
 
 // setTimeOut function will be called and here the callback function is been passed as an argument to the setTimeOut also along with it after 5000ms the function will be called and print the value or whatever code is about to execute mean while this function be store in an seprate memory loaction and a timer of 5000ms will be attached to it and as JS is single threaded language 
 
-// Here it callback function offers the power of asynchronous being an synchronous, single threaded laguage, also by doing this as JS exextion dont wait for 5000ms and it quickly moves to the next line.
+// Here it will callback function, this offers the power of asynchronous, even though being an synchronous, single threaded laguage, also by doing this as JS exextion dont wait for 5000ms and it quickly moves to the next line.
 
 function x(y) {
   console.log("x"); // will print x
@@ -50,23 +50,26 @@ x(function y() {
 
 // here the function is been called and argument to is been passed i.e. also a function i.e callback fucntion it will print the value for fucntion 
 
-// Hence, 1st x will be printed and then the value y will be printed and thne once the 5000ms are done the value Timer will be printed or logged on the console
+// Hence, 1st "x" will be printed and then the value "y" will be printed and then once the 5000ms are done the value "Timer" will be printed or logged on the console
 
-// in conclusion the setTimeOut asynchronous opration is not possible without the callback fucntion.
+// In conclusion the setTimeOut asynchronous operation is not possible without the callback function
 // We gave the call back to setTimeOut and it executed after some time i.e 5000ms
 
 // if you see in the call stack the x and y are there in the call stack i.e. these functions are there in the callstack and once after the 5000ms are done the setTimeOut Function will be pop up in the call stack 
 
+// So now every execution that takes place in JS is using the Call Stack so when there any opertion that blocks the call stack then this is  know as blocking the main thread
 
-// So now every execution that takes place in JS is using the Call Stack so when there any opertion that blocks the call stack then this is  know as blocking the main thread 
+// Suppose your fucntion either x() or y()  have humangous line of code to execute so it would take muach time to execute the code and till that time other fucntions and code has to wait. 
 
+// And hence everything will be blocked.
 
-// suppose your fucntion either x() or y()  have humangous line of code to execute so it would take muach time to execute the code and till that time other fucntions and code has to wait. 
-// And hence everything will be blocked 
+// Till that time no other code or all the other code apart form x() and y() will have to wait for the execution as JS has only one CALL STACK and one MAIN THREAD it JS engine won't be able to execute the other code.
 
-// till that time no other code or all the other code apart form x() and y() will have to wait for the execution as JS has only one CALL STACK and one MAIN THREAD it JS engine won't be able to execute the other code.
+//  As hence we say we should never block our main thread i.e. CALL STACK 
 
+// Hence, we should alway take use of async operation given in the JavaScript, one of the example of SetTimeOut in order to prevent it from halting i.e. Bloacking the main thread i.e. CAll STACK i.e also know as main thread.
 
-//  As hence we say we should never block our main thread i.e. this CALL STACK 
+// If JS did not had the callback functions, and 1st class functions, we could not have pass this functions to an another functions We wont be able to asynchronous oprations
 
-// Hence, we should alway take use of async operation given in the JavaScript, one of the example of SetTimeOut in order to prevent it from halting i.e. Bloacking the main thread i.e. CAll STACK i.e also know as main thread 
+//  So Using the web API i.e. setTimeOut we are able to do the asynchronous operations.
+
