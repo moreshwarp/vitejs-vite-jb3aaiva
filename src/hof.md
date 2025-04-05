@@ -1,0 +1,1 @@
+- A function which takes function as an argument or return the function from it is know as Higher Order Fucntion.
